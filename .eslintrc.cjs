@@ -2,18 +2,15 @@ module.exports = {
   root: true,
   env: { browser: true, es2020: true },
   extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:react/jsx-runtime',
-    'plugin:@typescript-eslint/recommended-type-checked',
-    'plugin:@typescript-eslint/stylistic-type-checked',
-    'plugin:react-hooks/recommended',
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/recommended",
+    "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', 'import'],
+  plugins: ['react-refresh',"react", "react-hooks", "@typescript-eslint", "prettier"],
   rules: {
     "no-use-before-define": "off",
     "camelcase": "error",
@@ -25,8 +22,10 @@ module.exports = {
       "error",
       "ignorePackages",
       {
-        "ts": "never",
-        "tsx": "never"
+        'js': 'never',
+        'jsx': 'never',
+        'ts': 'never',
+        'tsx': 'never'
       }
     ],
     "no-shadow": "off",
@@ -57,4 +56,13 @@ module.exports = {
     project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
   },
+  settings: {
+    react: {
+      version: "detect"
+    },
+    "import/resolver": {
+      typescript: {}
+    }
+  }
 }
+
