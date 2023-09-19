@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const navItems = [
   { label: "Home", path: "/" },
-  { label: "Planer", path: "/planer" },
+  { label: "Calendar", path: "/calendar" },
   { label: "Support", path: "/support" },
 ];
 

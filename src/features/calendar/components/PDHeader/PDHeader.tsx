@@ -1,12 +1,24 @@
-import { Typography, Stack, Tabs, Tab } from "@mui/material";
-import { ButtonFilter } from "../../../../common/ui";
-import { useHidden } from "../../../../common/hooks";
-import { MdFilter } from "react-icons/md";
-import { PDTopFilter, MoreFilters } from "./views";
+import { Stack } from "@mui/material";
+// import { PDTopFilter } from "./views";
+// import { useLocation, useNavigate } from "react-router-dom";
+
+// const MyTabs = () => {
+//   const location = useLocation();
+//   const navigate = useNavigate();
+//
+//   const handleChange = (event, newValue) => {
+//     navigate(newValue);
+//   };
+//
+//   return (
+//     <Tabs value={location.pathname} onChange={handleChange}>
+//       <Tab label="List view" value="/" />
+//       <Tab label="Calendar" value="calendar" />
+//     </Tabs>
+//   );
+// };
 
 export const PDHeader = () => {
-  const { isSwitch, handleSwitch } = useHidden();
-
   return (
     <Stack direction="column" sx={{ mb: 2 }}>
       <Stack
@@ -15,25 +27,11 @@ export const PDHeader = () => {
         alignItems="center"
         justifyContent="space-between">
         <Stack direction="row" alignItems="center">
-          <Tabs>
-            <Tab href="events" label="List view" />
-            <Tab href="calendar" label="Calendar" />
-          </Tabs>
+          {/* <MyTabs /> */}
 
-          <PDTopFilter />
+          {/* <PDTopFilter /> */}
         </Stack>
-
-        <ButtonFilter
-          startIcon={<MdFilter />}
-          sx={{ alignSelf: "flex-end" }}
-          onClick={handleSwitch}>
-          <Typography variant="button" textTransform="initial">
-            More Filters
-          </Typography>
-        </ButtonFilter>
       </Stack>
-
-      {isSwitch && <MoreFilters />}
     </Stack>
   );
 };
